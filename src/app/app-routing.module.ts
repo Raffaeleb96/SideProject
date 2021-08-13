@@ -5,9 +5,11 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-  {path:'', component : ErrorComponent},
-  {path:'Welcome', component : WelcomeComponent},
-  {path:'login', component : LoginComponent}
+  {path:'', component : LoginComponent},
+  {path:'Welcome/:userid', component : WelcomeComponent},
+  {path:'login', component : LoginComponent},
+  {path:'**', component : ErrorComponent}
+
 ];
 
 @NgModule({

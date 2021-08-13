@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,22 +10,27 @@ export class LoginComponent implements OnInit {
 
   userid = 'raffo'
   password = '123'
-  autenticato = true
+  //autenticato = true
   consentito : boolean = false
   errorMsg = 'Nome utente o password errati!'
-  infoMsg = 'Accesso consentito'
+  //infoMsg = 'Accesso consentito'
   
-  constructor() { }
+  constructor(private route : Router) { 
+
+  }
   
   ngOnInit(): void {
   }
 
   gestAut(){
     if(this.userid === 'raffo' && this.password === '123'){
-      this.autenticato = true;
-      this.consentito = true ;    }
+      //this.autenticato = true;
+      this.route.navigate(['Welcome', this.userid]);
+      this.consentito = true ;   
+    
+    }
     else 
-    this.autenticato= false
+    //this.autenticato= false
     this.consentito = false
   }
  
