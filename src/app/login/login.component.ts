@@ -11,9 +11,10 @@ export class LoginComponent implements OnInit {
   userid = 'raffo'
   password = '123'
   //autenticato = true
-  consentito : boolean = false
+  consentito = false
+  locked = false
   errorMsg = 'Nome utente o password errati!'
-  //infoMsg = 'Accesso consentito'
+  infoMsg = 'Accesso non consentito'
   
   constructor(private route : Router) { 
 
@@ -26,12 +27,13 @@ export class LoginComponent implements OnInit {
     if(this.userid === 'raffo' && this.password === '123'){
       //this.autenticato = true;
       this.route.navigate(['Welcome', this.userid]);
-      this.consentito = true ;   
+      this.consentito = true ; 
     
     }
     else 
     //this.autenticato= false
     this.consentito = false
+    this.locked = true;
   }
  
 }
