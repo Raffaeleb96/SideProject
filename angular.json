@@ -33,7 +33,9 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/bootstrap.min.js",
               "src/assets/js/main.js"
+
             ]
           },
           "configurations": {
